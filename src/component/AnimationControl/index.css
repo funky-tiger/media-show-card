@@ -1,0 +1,136 @@
+/* ------------------------------ */
+/* 一段动画 */
+svg line {
+  /* 透明色 */
+  stroke: transparent;
+  /* 线条宽度 */
+  stroke-width: 1;
+  fill: none;
+  /* 创建虚线 */
+  stroke-dasharray: 1000;
+}
+.svg-line1 {
+  /* 偏移量 */
+  stroke-dashoffset: 0;
+}
+/* 具体svg动画偏移 */
+@keyframes depict {
+  from {
+    stroke: gray;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke: gray;
+    stroke-dashoffset: 0;
+  }
+}
+/* 斜线动画 */
+.svg-line2 {
+  stroke-dasharray: 1000;
+  animation: depict 1s linear 0s 1 normal forwards;
+}
+/* 旋转icon动画 */
+.rotate-point {
+  position: fixed;
+}
+.rotate-big {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-image: url("./assets/img/out.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: rotate 1s linear infinite;
+}
+.rotate-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  background-image: url("./assets/img/inner.png");
+  background-size: 100% 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: derotate 1s linear infinite;
+}
+
+/* 具体旋转动画 */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes derotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ------------------------------ */
+/* 二段动画 */
+.second-transition {
+  height: 0px;
+  position: fixed;
+  /* top: 300px;
+  left: 300px; */
+}
+.sec-trans-item1 {
+  background-color: gray;
+  height: 2px;
+}
+.sec-trans-item2 {
+  background-color: black;
+  height: 5px;
+  margin-bottom: 2px;
+}
+.sec-trans-item3 {
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.final-content-item {
+  width: 50%;
+}
+
+.content-title {
+  text-align: center;
+  font-size: 16px;
+}
+.content-title span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* 显示卡片的淡出动画 */
+
+.card-fade-out {
+  animation: fadeout 0.8s linear infinite;
+}
+/* 具体淡出动画 */
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

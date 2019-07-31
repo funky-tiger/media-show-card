@@ -1,0 +1,3 @@
+interface ITiger {
+    age: number
+}
