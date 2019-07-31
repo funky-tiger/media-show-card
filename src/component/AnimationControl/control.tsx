@@ -40,7 +40,6 @@ export default function() {
                     }
                     if (AnimationSetting.length > 1) {
                         // 多个组件
-                        console.log('多个组件inputElement', inputElement)
                         inputElementArr = inputElement.props.children
                     } else {
                         // 单个组件

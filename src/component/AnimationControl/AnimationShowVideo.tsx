@@ -22,16 +22,19 @@ export default class AnimationShowVideo extends React.Component<IProps> {
     state = {}
     public video: any
     componentDidMount() {
-        const { timePoint, handleToggleNextShow } = this.props
-        // 监听视频播放事件
-        this.video.addEventListener('timeupdate', () => {
-            // 视频当前播放时间
-            // tslint:disable-next-line:radix
-            const currentTime = parseInt(this.video.currentTime)
-            if (timePoint.indexOf(currentTime) > -1) {
-                handleToggleNextShow(currentTime)
-            }
-        })
+        setTimeout(() => {
+            const { timePoint, handleToggleNextShow } = this.props
+            console.log('timePoint', this.props)
+            // 监听视频播放事件
+            this.video.addEventListener('timeupdate', () => {
+                // 视频当前播放时间
+                // tslint:disable-next-line:radix
+                const currentTime = parseInt(this.video.currentTime)
+                if (timePoint.indexOf(currentTime) > -1) {
+                    handleToggleNextShow(currentTime)
+                }
+            })
+        }, 500)
     }
     render() {
         const { src, autoPlay, loop, style } = this.props
@@ -39,12 +42,13 @@ export default class AnimationShowVideo extends React.Component<IProps> {
             // 无滚动条
             <div style={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                 <video
+                    muted
                     ref={video => (this.video = video)}
                     src={src ? src : ''}
-                    // autoPlay={autoPlay ? true : false}
-                    autoPlay={true}
-                    // loop={loop ? loop : 'loop'}
-                    loop={true}
+                    autoPlay={autoPlay ? true : false}
+                    // autoPlay={true}
+                    loop={loop ? loop : 'loop'}
+                    // loop={true}
                     style={style ? style : {}}
                 />
             </div>
