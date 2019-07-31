@@ -1,6 +1,6 @@
 {
   "name": "media-show-card",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "A plug-in that can configure the start and end points and customize the display area of the DOM video display card information",
   "main": "lib/index.js",
   "scripts": {
@@ -21,13 +21,13 @@
   ],
   "author": "FunkyTiger",
   "license": "ISC",
-  "homepage": "https://github.com/learn-npm/full-sample#readme",
+  "homepage": "https://github.com/funky-tiger/media-show-card/blob/master/README.md",
   "bugs": {
-    "url": "https://github.com/learn-npm/full-sample/issues"
+    "url": "https://github.com/funky-tiger/media-show-card/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/learn-npm/full-sample.git"
+    "url": "git@github.com:funky-tiger/media-show-card.git"
   },
   "types": "./src/global.d.ts",
   "typings": "./src/global.d.ts",

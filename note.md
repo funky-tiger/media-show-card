@@ -95,6 +95,23 @@
 - 添加代码覆盖率徽章
   > ...
 
+## package.json 中相关字段
+
+- homepage
+  > 指定项目的主页地址，如果没有一般可以使用项目的 GitHub 地址。
+- bugs.url
+  > 指定项目的 Bug 反馈地址，一般可以用项目的 GitHub Issue 地址。
+- repository.url 和 repository.type
+  > 指定项目的源码仓库地址，可以指定是 git/cvs/svn。
+- main
+  > 指定 Node.js 中 require("moduel-name") 导入的默认文件。
+- keywords
+  > 指定项目的关键词，合理设置有利于让他人发现你的项目。
+- engines
+  > 设置项目对引擎的版本要求，比如 node、electron、vscode 等。
+- types 和 typings
+  > 设置项目内置的 TypeScript 模块声明文件入口文件。
+
 # 要点
 
 - example 只是一个用来展示 demo 的目录，其中引用的组件还是来自于根目录的 src 中的组件

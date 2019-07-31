@@ -94,5 +94,3 @@
 - 原因
   > A. 该组件通过高阶函数 control 进行包裹， 其中的 props 可能没处理好.
   > 解决办法:在高阶组件中将{this.props}和新的 {props} 合并后再传给代理组件 ProxyComponent
-
-* 整个开发过程参考 antd 的 form 组件
