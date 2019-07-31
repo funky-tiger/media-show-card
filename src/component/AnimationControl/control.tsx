@@ -33,7 +33,7 @@ export default function() {
                 const AnimationSetting: IObjects = options.setting || []
                 return (fieldElement: React.ReactElement) => {
                     // 因为fieldElement是实例原生DOM组件 所以不能通过props进行传值 通过克隆一份ReactElement组件，再将props传递给该组件
-                    const inputElement: React.ReactElement = React.cloneElement(fieldElement)
+                    let inputElement: React.ReactElement = React.cloneElement(fieldElement)
                     let inputElementArr: string[] | string | null = null
                     if (!Array.isArray(AnimationSetting)) {
                         throw Error('setting必须是一个数组')
