@@ -92,6 +92,45 @@
 
 ## 添加 CI（持续集成)
 
+> https://www.travis-ci.org/
+
+- Travis CI 提供的是持续集成服务。它绑定 GitHub 上的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器
+- 持续集成指的是只要代码有变更，就自动运行构建和测试，反馈运行结果。确保符合预期之后，再将新代码集成到主干
+- 持续集成的好处在于，每次代码的小幅变更，就能看到运行结果，从而不断累计小的变更，而不是在开发周期结束时，一次合并很多代码
+- Travis CI 只支持 GitHub，必须有一个 GitHub 账号
+- 该账号下面有一个项目，里面有可运行的代码，还包括构建或测试脚本
+- 需要激活一个仓库，Travis 会监听这个仓库的所有变化
+- Travis 要求项目的根目录下面必须有一个.travis.yml 文件，这是 Travis 配置文件，指定了 Travis 的行为
+- 该文件必须保存在 GitHub 仓库中，一旦代码有新的 commit，Travis 就会去找.travis.yml 配置文件，执行里面的命令
+- 这个文件采用 YAML 格式
+  `语言 语言版本`
+  ...
+- Travis 会经历两个阶段
+
+  - install 安装依赖
+    > install 字段用来指定安装脚本`install: npm install -g npm`
+    > 如不需安装，则可直接跳过 `install: true`
+  - script 运行脚本
+    > script 字段用来指定构建或测试脚本 `script: npm run build`
+
+- Travis 提供了 7 个钩子
+  > before_install 安装阶段之前
+  > install 安装
+  > before_script 脚本阶段之前
+  > script 脚本阶段
+  > aftersuccess or afterfailure 脚本成功或失败
+  > [OPTIONAL] before_deploy 部署之前
+  > [OPTIONAL] deploy 部署
+  > [OPTIONAL] after_deploy 部署之后
+  > after_script 脚本阶段之后
+
+* 1. 打开 Travis 官网
+     > https://www.travis-ci.org/
+     > 使用 GitHub 账号登录 Travis
+     > 选择你要构建的项目
+* 2. 项目根目录配置.travis.yml
+* 3. 配置好.travis.yml 后连同项目一起提交到远程仓库
+
 - 添加 Travis 构建徽章
   > ...
 - 添加代码覆盖率徽章
