@@ -49,36 +49,38 @@
   > 在 package.json 中配置 scripts 快捷命令
   > `{ "start": "webpack-dev-server --open development","build":"tsc" }`
 
-## 5. 编写插件代码
+## 5. 配置 webpack
+
+## 6. 编写插件代码
 
 - ...
 
-## 6. 添加单元测试
+## 7. 添加单元测试
 
 - 安装
   > npm i jest ts-jest @types/jest -D
 - 新建 jestconfig.json 文件
   > ...
 
-## 7. 写一个单元测试示例
+## 8. 写一个单元测试示例
 
 > ...
 
-## 8. 完善文档信息
+## 9. 完善文档信息
 
 - mkdir doc
 
-## 9.完善 package.json 的描述信息
+## 10.完善 package.json 的描述信息
 
 > ...
 
-## 10. 提交代码到 git 仓库
+## 11. 提交代码到 git 仓库
 
 > git add .
 > git commit -m "feat: init"
 > git push
 
-## 11. 发包到 npm
+## 12. 发包到 npm
 
 - 未注册 ? npm adduser : 发布
 - npm version patch
